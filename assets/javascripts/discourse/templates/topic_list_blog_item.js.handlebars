@@ -1,0 +1,22 @@
+<p class="date">
+  {{#if bumped}}
+    {{raw-date bumped_at}}
+  {{else}}
+    {{raw-date created_at}}
+  {{/if}} <!--<span class="reading-time">reading time ~3min</span>--></p>
+<h2 class="post-title">
+  {{{topic-link this}}}
+</h2>
+<h3>{{bound-category-link category showParent=true}}</h3>
+<div class="post-content">
+    {{!-- <a class="header-image" href="/2014/05/27/is-business-against-open">
+      <img alt="Is business against open?" src="/assets/content/posts/2014-05-27-open-the-wrong-side-around.jpg">
+    </a> --}}
+    {{{excerpt}}}
+</div>
+<div class="post-meta">
+   // <a href="{{unbound url}}">{{i18n read_more}}</a><br>
+   // <span title='{{i18n topic.likes count="like_count"}}'>{{number like_count numberKey="likes_long"}} <i class='fa fa-heart'></i></span> <span class='badge-posts'>{{number posts_count numberKey="posts_long"}}</span> <span class="badge-views">{{number views numberKey="views_long"}}</span>
+</div>
+
+
