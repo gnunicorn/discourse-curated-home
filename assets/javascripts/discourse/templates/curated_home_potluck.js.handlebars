@@ -1,0 +1,45 @@
+<div class="intro">
+  <div class="hero">
+    <h1>{{Discourse.SiteSettings.curated_home_title}}</h1>
+    <p>{{Discourse.SiteSettings.curated_home_intro}}</p>
+  </div>
+  <div class="category-potluck">
+  {{#each category in view.importantCategories}}
+    {{bound-category-link category}}
+  {{/each}}
+  </div>
+</div>
+</div>
+<div class='contents'>
+  {{#if showTable}}
+
+    {{#if topicTrackingState.hasIncoming}}
+      <div class='alert alert-info clickable' {{action showInserted}}>
+        {{countI18n new_topics_inserted count=topicTrackingState.incomingCount}}
+        {{i18n show_new_topics}}
+      </div>
+    {{/if}}
+
+    {{each topics itemController="topic-list-item" itemViewClass="Discourse.TopicListBlogItemView"}}
+  {{/if}}
+</div>
+
+<footer id='topic-list-bottom'>
+  {{#if loadingMore}}
+    <div class='topics-loading'>{{i18n topic.loading_more}}</div>
+  {{/if}}
+  {{#if allLoaded}}
+    {{#if showDismissRead}}
+      <button class='btn dismiss-read' {{action dismissRead}}>{{i18n topics.bulk.dismiss_read}}</button>
+    {{/if}}
+    {{#if showResetNew}}
+      <button class='btn dismiss-read' {{action resetNew}}>{{i18n topics.bulk.dismiss_new}}</button>
+    {{/if}}
+
+    <h3>
+      {{#if latest}}
+        {{footerMessage}}
+      {{/if}}
+    </h3>
+  {{/if}}
+</footer>

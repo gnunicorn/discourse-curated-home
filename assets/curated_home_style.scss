@@ -1,0 +1,39 @@
+.intro {
+    background: #666;
+    color: #FFF;
+}
+
+.intro:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.intro .hero {
+    margin: 10px 0px 0px;
+    text-align: center;
+    display: block;
+    float: left;
+    width: 50%;
+}
+
+.intro .hero h1{
+    margin-top: 20%;
+}
+
+.intro .category-potluck {
+    float: right;
+    width: 338px;
+    margin-left: 0px;
+}
+
+.intro .category-potluck .badge-category {
+    display: block;
+    float: left;
+    width: 70px;
+    height: 40px;
+    padding-top: 30px;
+    text-align: center;
+}
