@@ -1,65 +1,9 @@
-# Discourse Checklist Plugin
+# Discourse Curated Home Plugin
 
-Adds simple helpers to build (interactive) checklists, rendering "[]", "[*]" and "[x]" into pretty UI parts you can interact with.
-
-If you want to collaboratively edit a todo-list, you might want to check out [the Shared Edit Plugin](https://github.com/ligthyear/discourse-plugin-shared-edit) and install it, too. Both together allow for collaborative todo-list editing.
-
-## Details
-
-Here is a little screenshot of the plugin in action:
-
-![Preview screenshot](https://raw.github.com/ligthyear/discourse-plugin-checklist/master/docs/preview-example.png)
-
-On top, if there are our checklist-items on the post and the current user is able to edit the post, they are interactively able to toggle the checkbox from the post view by clicking the box:
-
-![Interactive before](https://raw.github.com/ligthyear/discourse-plugin-checklist/master/docs/live-click-before.png)
-
-![Interactive waiting](https://raw.github.com/ligthyear/discourse-plugin-checklist/master/docs/live-click-waiting.png)
-
-![Interactive after](https://raw.github.com/ligthyear/discourse-plugin-checklist/master/docs/live-click-after.png)
-
-Which will be recorded as a new version of the post:
-
-![New version](https://raw.github.com/ligthyear/discourse-plugin-checklist/master/docs/new-version.png)
-
-## Installation
-
-Just two easy steps. From your main discourse do:
-
-    cd plugins
-    git clone https://github.com/ligthyear/discourse-plugin-checklist.git   # clone the repo here
-    cd ..
-    RAILS_ENV=production rake assets:precompile
-
-Then restart your discourse and enjoy the fun on ever /user/*/activity-page.
-
-## Changelog:
-
- * 2014-03-11
-   - switching to [font-awesome](http://fontawesome.io) based rendering
-   - adding the new `[_]` option
-   - adding doc reference to shared-edits plugin
-   - fix issue when that updating after `[x]` or `[-]` wasn't possible
-   - this unfortunately is backwards incompatible, if checkboxes don't show up anymore, you need to re-save them to the database.
-
- * 2014-03-05
-   - initial version with prettified rendering
-   - allow interactive box-clicking updates
-
-## TODO
-
-(in order of importance)
-
- * allow easy item "sorting" if the entries are in a list
-
-### other Limitations:
-
- * While updating one item, you can't update another
- * If you want to make multiple changes it creates multiple versions
- * you can only toggle the default type
+Show a home page with just the curated topics.
 
 ## Authors:
-Benjamin Kampmann <me @ create-build-execute . com>
+Benjamin Kampmann <ben @ create-build-execute . com>
 
 ## License (BSD):
 Copyright (c) 2014, Benjamin Kampmann

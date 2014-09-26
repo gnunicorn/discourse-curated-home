@@ -1,39 +1,21 @@
-.intro {
-    background: #666;
-    color: #FFF;
-}
+.curated-home {
+    // .badge-category {
+    //   font-size: 0.6em;
+    // }
+    .date {
+      font-size: 0.8em;
+    }
 
-.intro:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden;
-}
+    img.teaser {
+      width: 100%;
+    }
 
-.intro .hero {
-    margin: 10px 0px 0px;
-    text-align: center;
-    display: block;
-    float: left;
-    width: 50%;
-}
+    .post-meta, .post-meta .number {
+      font-size: 0.8em;
+      margin-bottom: 15vh;
+    }
 
-.intro .hero h1{
-    margin-top: 20%;
-}
-
-.intro .category-potluck {
-    float: right;
-    width: 338px;
-    margin-left: 0px;
-}
-
-.intro .category-potluck .badge-category {
-    display: block;
-    float: left;
-    width: 70px;
-    height: 40px;
-    padding-top: 30px;
-    text-align: center;
+    .post-meta {
+        text-align: right;
+    }
 }
