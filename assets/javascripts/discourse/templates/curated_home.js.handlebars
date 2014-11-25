@@ -1,5 +1,6 @@
 <div class='contents curated-home'>
-  {{#if showTable}}
+  
+  {{#if hasTopics}}
 
     {{#if topicTrackingState.hasIncoming}}
       <div class='alert alert-info clickable' {{action showInserted}}>
@@ -12,22 +13,39 @@
   {{/if}}
 </div>
 
-<footer id='topic-list-bottom'>
-  {{#if loadingMore}}
-    <div class='topics-loading'>{{i18n topic.loading_more}}</div>
-  {{/if}}
+<footer class='topic-list-bottom'>
+  {{loading-spinner condition=loadingMore}}
   {{#if allLoaded}}
     {{#if showDismissRead}}
-      <button class='btn dismiss-read' {{action dismissRead}}>{{i18n topics.bulk.dismiss_read}}</button>
+      <button title="{{i18n topics.bulk.dismiss_topics_tooltip}}" id='dismiss-topics' class='btn dismiss-read' {{action "dismissRead" "topics"}}>{{i18n topics.bulk.dismiss_topics}}</button>
+      <button title="{{i18n topics.bulk.dismiss_posts_tooltip}}" id='dismiss-posts' class='btn dismiss-read' {{action "dismissRead" "posts"}}>{{i18n topics.bulk.dismiss_posts}}</button>
     {{/if}}
     {{#if showResetNew}}
-      <button class='btn dismiss-read' {{action resetNew}}>{{i18n topics.bulk.dismiss_new}}</button>
+      <button id='dismiss-new' class='btn dismiss-read' {{action "resetNew"}}>{{i18n topics.bulk.dismiss_new}}</button>
     {{/if}}
 
-    <h3>
-      {{#if latest}}
+    {{#if latest}}
+      <div class="education">
+        {{{footerEducation}}}
+      </div>
+      <h3>
         {{footerMessage}}
+        {{#if can_create_topic}}<a href='#' {{action "createTopic"}}>{{i18n topic.suggest_create_topic}}</a>{{/if}}
+      </h3>
+    {{else}}
+      {{#if top}}
+        <h3>
+          {{#link-to "discovery.categories"}}{{i18n topic.browse_all_categories}}{{/link-to}}, {{#link-to 'discovery.latest'}}{{i18n topic.view_latest_topics}}{{/link-to}} {{i18n or}} {{i18n filters.top.other_periods}}
+        {{top-period-buttons period=period}}
+        </h3>
+      {{else}}
+        <div class="education">
+            {{{footerEducation}}}
+        </div>
+        <h3>
+          {{footerMessage}}{{#link-to "discovery.categories"}} {{i18n topic.browse_all_categories}}{{/link-to}} {{i18n or}} {{#link-to 'discovery.latest'}}{{i18n topic.view_latest_topics}}{{/link-to}}
+        </h3>
       {{/if}}
-    </h3>
+    {{/if}}
   {{/if}}
 </footer>
