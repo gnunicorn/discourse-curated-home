@@ -1,5 +1,10 @@
 <div class='contents curated-home'>
-  
+
+  {{#if Discourse.SiteSettings.curated_home_show_sidebar}}
+    <div class="side-bar-wrap">
+      <section class="main-outlet-wrap">
+  {{/if}}
+
   {{#if hasTopics}}
 
     {{#if topicTrackingState.hasIncoming}}
@@ -10,6 +15,13 @@
     {{/if}}
 
     {{each topics itemController="topic-list-item" itemViewClass="Discourse.TopicListBlogItemView"}}
+  {{/if}}
+
+  {{#if Discourse.SiteSettings.curated_home_show_sidebar}}
+      </section>
+      <aside class="side-bar">{{view Discourse.SidebarView}}</aside>
+      <div class="clearfix"></div>
+    </div>
   {{/if}}
 </div>
 

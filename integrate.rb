@@ -17,7 +17,3 @@ end
 
 TopicListItemSerializer.send(:include, AddTopicCreator)
 TopicQuery.send(:include, CuratedTopicQuery)
-
-
-#finally register
-Discourse.filters << "curated"

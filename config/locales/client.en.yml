@@ -1,5 +1,6 @@
 en:
-  js:
-    filters:
-      curated:
-        title: "Home"
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          curated_home: Curated Home

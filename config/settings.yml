@@ -1,0 +1,4 @@
+curated_home:
+  curated_home_show_sidebar:
+    default: false
+    client: true

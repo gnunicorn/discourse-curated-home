@@ -16,6 +16,13 @@
     }
 
     .post-meta {
-        text-align: right;
+      text-align: right;
+      span {
+        padding: 0 1.2em;
+      }
+      .author:after {
+        content:"\000A";
+        white-space: pre;
+      }
     }
 }

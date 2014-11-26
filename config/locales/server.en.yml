@@ -1,0 +1,5 @@
+en:
+  site_settings:
+    categories:
+      curated_home: "Curated Home Plugin"
+    curated_home_show_sidebar: "Show Sidebar on curated home (requires Sidebar plugin)"
