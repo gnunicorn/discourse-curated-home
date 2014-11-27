@@ -16,6 +16,9 @@ module AddTopicCreatedBy
     def created_by
         BasicUserSerializer.new(object.user, scope: scope, root: false)
     end
+    def include_excerpt?
+        pinned || object.custom_fields["is_on_home"]
+    end
 end
 
 module AddTopicIsOnHome
@@ -35,8 +38,14 @@ module AddCustomFieldUpdater
 
     @topic = Topic.find_by(id: topic_id)
     @topic.custom_fields[field] = value
+    key = "custom_field_#{field}_updating"
+    send(key) if respond_to? key
     @topic.save!
     render nothing: true
+  end
+
+  def custom_field_is_on_home_updating
+    @topic.excerpt = @topic.ordered_posts.first.excerpt
   end
 end
 
