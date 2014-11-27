@@ -4,3 +4,13 @@ en:
       site_settings:
         categories:
           curated_home: Curated Home
+  js:
+    topic:
+      actions:
+        is_on_home: "Remove from Homepage"
+        set_on_home: "Add to Homepage"
+    topics:
+      bottom:
+        curated: ""
+    in: "in"
+    by: "by"
