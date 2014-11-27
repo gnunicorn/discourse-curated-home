@@ -14,3 +14,6 @@ en:
         curated: ""
     in: "in"
     by: "by"
+    filters:
+      curated:
+        title: "Home"
