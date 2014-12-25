@@ -5,14 +5,6 @@
       <section class="main-outlet-wrap">
 
         {{#if hasTopics}}
-
-          {{#if topicTrackingState.hasIncoming}}
-            <div class='alert alert-info clickable' {{action showInserted}}>
-              {{countI18n new_topics_inserted count=topicTrackingState.incomingCount}}
-              {{i18n show_new_topics}}
-            </div>
-          {{/if}}
-
           {{each topics itemController="topic-list-item" itemViewClass="topic-list-blog-item"}}
         {{/if}}
 
@@ -22,14 +14,6 @@
     </div>
   {{else}}
     {{#if hasTopics}}
-
-      {{#if topicTrackingState.hasIncoming}}
-        <div class='alert alert-info clickable' {{action showInserted}}>
-          {{countI18n new_topics_inserted count=topicTrackingState.incomingCount}}
-          {{i18n show_new_topics}}
-        </div>
-      {{/if}}
-
       {{each topics itemController="topic-list-item" itemViewClass="topic-list-blog-item"}}
     {{/if}}
   {{/if}}
@@ -38,36 +22,12 @@
 <footer class='topic-list-bottom'>
   {{loading-spinner condition=loadingMore}}
   {{#if allLoaded}}
-    {{#if showDismissRead}}
-      <button title="{{i18n topics.bulk.dismiss_topics_tooltip}}" id='dismiss-topics' class='btn dismiss-read' {{action "dismissRead" "topics"}}>{{i18n topics.bulk.dismiss_topics}}</button>
-      <button title="{{i18n topics.bulk.dismiss_posts_tooltip}}" id='dismiss-posts' class='btn dismiss-read' {{action "dismissRead" "posts"}}>{{i18n topics.bulk.dismiss_posts}}</button>
-    {{/if}}
-    {{#if showResetNew}}
-      <button id='dismiss-new' class='btn dismiss-read' {{action "resetNew"}}>{{i18n topics.bulk.dismiss_new}}</button>
-    {{/if}}
-
-    {{#if latest}}
-      <div class="education">
+    <div class="education">
         {{{footerEducation}}}
-      </div>
-      <h3>
-        {{footerMessage}}
-        {{#if can_create_topic}}<a href='#' {{action "createTopic"}}>{{i18n topic.suggest_create_topic}}</a>{{/if}}
-      </h3>
-    {{else}}
-      {{#if top}}
-        <h3>
-          {{#link-to "discovery.categories"}}{{i18n topic.browse_all_categories}}{{/link-to}}, {{#link-to 'discovery.latest'}}{{i18n topic.view_latest_topics}}{{/link-to}} {{i18n or}} {{i18n filters.top.other_periods}}
-        {{top-period-buttons period=period}}
-        </h3>
-      {{else}}
-        <div class="education">
-            {{{footerEducation}}}
-        </div>
-        <h3>
-          {{footerMessage}}{{#link-to "discovery.categories"}} {{i18n topic.browse_all_categories}}{{/link-to}} {{i18n or}} {{#link-to 'discovery.latest'}}{{i18n topic.view_latest_topics}}{{/link-to}}
-        </h3>
-      {{/if}}
-    {{/if}}
+      {{#if can_create_topic}}<a href='#' {{action "createTopic"}}>{{i18n 'topic.suggest_create_topic'}}</a>{{/if}}
+    </div>
+    <h3>
+      {{footerMessage}}{{#link-to "discovery.categories"}} {{i18n 'topic.browse_all_categories'}}{{/link-to}} {{i18n 'or'}} {{#link-to 'discovery.latest'}}{{i18n 'topic.view_latest_topics'}}{{/link-to}}
+    </h3>
   {{/if}}
 </footer>
