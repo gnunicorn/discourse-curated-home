@@ -3,25 +3,35 @@
   {{#if Discourse.SiteSettings.curated_home_show_sidebar}}
     <div class="side-bar-wrap">
       <section class="main-outlet-wrap">
-  {{/if}}
 
-  {{#if hasTopics}}
+        {{#if hasTopics}}
 
-    {{#if topicTrackingState.hasIncoming}}
-      <div class='alert alert-info clickable' {{action showInserted}}>
-        {{countI18n new_topics_inserted count=topicTrackingState.incomingCount}}
-        {{i18n show_new_topics}}
-      </div>
-    {{/if}}
+          {{#if topicTrackingState.hasIncoming}}
+            <div class='alert alert-info clickable' {{action showInserted}}>
+              {{countI18n new_topics_inserted count=topicTrackingState.incomingCount}}
+              {{i18n show_new_topics}}
+            </div>
+          {{/if}}
 
-    {{each topics itemController="topic-list-item" itemViewClass="topic-list-blog-item"}}
-  {{/if}}
+          {{each topics itemController="topic-list-item" itemViewClass="topic-list-blog-item"}}
+        {{/if}}
 
-  {{#if Discourse.SiteSettings.curated_home_show_sidebar}}
       </section>
       <aside class="side-bar">{{view Discourse.SidebarView}}</aside>
       <div class="clearfix"></div>
     </div>
+  {{else}}
+    {{#if hasTopics}}
+
+      {{#if topicTrackingState.hasIncoming}}
+        <div class='alert alert-info clickable' {{action showInserted}}>
+          {{countI18n new_topics_inserted count=topicTrackingState.incomingCount}}
+          {{i18n show_new_topics}}
+        </div>
+      {{/if}}
+
+      {{each topics itemController="topic-list-item" itemViewClass="topic-list-blog-item"}}
+    {{/if}}
   {{/if}}
 </div>
 
