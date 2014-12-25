@@ -5,32 +5,34 @@
     {{raw-date created_at}}
   {{/if}}
 </span>
+
+{{#if image_url}}
+  <img class="teaser" {{bind-attr src="image_url"}} >
+{{/if}}
+
 <h2 class="post-title">
   {{{topic-link this}}}
 </h2>
 <div class="post-content">
-  {{#if image_url}}
-    <img class="teaser" {{bind-attr src="image_url"}} >
-  {{/if}}
   {{{excerpt}}}
   <br>
-  // <a href="{{unbound url}}">{{i18n read_more}}</a><br>
+  // <a href="{{unbound url}}">{{i18n 'read_more'}}</a><br>
 </div>
 <div class="post-meta">
 
   <a class="author" {{action expandForUsername this.created_by.username}}>
-    {{i18n by}}
+    {{i18n 'by'}}
     {{bound-avatar this.created_by "small"}}
     {{created_by.username}}
   </a>
 
   {{#if category}}
     <span class="category-title">
-      {{i18n in}}
+      {{i18n 'in'}}
       {{bound-category-link category showParent=false allowUncategorized=true}}
     </span>
   {{/if}}
-   <span title='{{i18n topic.likes count="like_count"}}'>
+   <span>
     {{number like_count numberKey="likes_long"}}
     <i class='fa fa-heart'></i>
   </span>

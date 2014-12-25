@@ -6,8 +6,17 @@
       font-size: 0.8em;
     }
 
+    a.lightbox {
+      display: none;
+    }
+
     img.teaser {
       width: 100%;
+      display: block;
+      max-height: 300px;
+      max-width: 100%;
+      margin: 30px auto;
+      object-fit: cover;
     }
 
     .post-meta, .post-meta .number {
