@@ -8,14 +8,6 @@ Replaces Discourse home with a blog-style website with admin-selected topics.
 
 ## Installation
 
-### Manual
-
-From your main discourse do:
-
-    cd plugins
-    git clone https://github.com/werweisswas/discourse-plugin-tagger.git   # clone the repo here
-    cd ..
-
 ### Docker
 
 To install in docker, add the following to your app.yml in the plugins section:
@@ -37,6 +29,15 @@ and rebuild docker via
 cd /var/discourse
 ./launcher rebuild app
 ```
+
+### Manual
+
+From your main discourse do:
+
+    cd plugins
+    git clone https://github.com/ligthyear/discourse-curated-home.git curated-home   # clone the repo here
+    cd ..
+
 
 ## Configuration:
 
@@ -71,6 +72,9 @@ To remove an entry from the home page, just go into the topics admin menu and cl
  * 2014-12-18:
    - first version to be published
 
+## Known Issues:
+
+ - (none)
 
 ## Authors:
 Benjamin Kampmann <ben @ create-build-execute . com>
