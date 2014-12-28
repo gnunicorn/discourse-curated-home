@@ -2,7 +2,7 @@
 
 Replaces Discourse home with a blog-style website with admin-selected topics.
 
- - Has sidebar plugin support (if installed).
+ - Has [sidebar plugin](https://github.com/ligthyear/discourse-plugin-sidebar) support (if installed).
 
 ![Example View from Create-Build-Execute.com with active sidebar view](https://raw.githubusercontent.com/ligthyear/discourse-curated-home/master/docs/blogindex.png)
 
