@@ -1,0 +1,7 @@
+<li>
+  {{#if is_on_home}}
+    <button {{action "toggleCustomField" "is_on_home"}} class='btn btn-admin'>{{fa-icon "home"}} {{i18n 'topic.actions.is_on_home'}}</button>
+  {{else}}
+    <button {{action "toggleCustomField" "is_on_home"}} class='btn btn-admin'>{{fa-icon "home"}} {{i18n 'topic.actions.set_on_home'}}</button>
+  {{/if}}
+</li>
