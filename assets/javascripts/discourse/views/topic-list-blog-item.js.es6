@@ -1,6 +1,5 @@
-
 export default Discourse.View.extend({
-  templateName:"topic_list_blog_item",
+  templateName:"topic-list-blog-item",
   classNames: ["blogpost"],
   attributeBindings: ['data-topic-id'],
   'data-topic-id': Em.computed.alias('content.id'),
